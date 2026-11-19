@@ -1,0 +1,15 @@
+<Sysmon schemaversion="4.90">
+  <HashAlgorithms>SHA256</HashAlgorithms>
+  <CheckRevocation />
+  <EventFiltering>
+    <!-- Registra todas las creaciones de procesos. -->
+    <ProcessCreate onmatch="exclude" />
+
+    <!-- Registra todas las conexiones de red iniciadas por procesos. -->
+    <NetworkConnect onmatch="exclude" />
+
+    <!-- Registra la creación de archivos para disponer de contexto inicial. -->
+    <FileCreate onmatch="exclude" />
+  </EventFiltering>
+</Sysmon>
+
